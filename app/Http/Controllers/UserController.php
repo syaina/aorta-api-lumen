@@ -18,7 +18,7 @@ class UserController extends Controller
     }
 
     public function index()
-{
+    {
         $getUser = User::OrderBy("id", "DESC")->paginate(50);
 
         $out = [

@@ -20,6 +20,9 @@ $router->post('/login', 'AuthController@login');
 
 $router->get('/pengajar', 'PengajarController@index');
 
+$router->get('/materi', 'MateriController@index');
+$router->get('/materi/id/{id}', 'MateriController@indexById');
+
 // =================================================================
 //      Need Admin's Authentication
 // ====================================================================
@@ -32,5 +35,14 @@ $router->get('/user', 'UserController@index');
 $router->post('/pengajar/insert', 'PengajarController@store');
 $router->post('/pengajar/update', 'PengajarController@update');
 $router->post('/pengajar/delete', 'PengajarController@delete');
+
+$router->post('/materi/insert', 'MateriController@store');
+$router->post('/materi/update', 'MateriController@update');
+$router->post('/materi/delete', 'MateriController@delete');
+$router->get('/materi/get-delete', 'MateriController@getDelete');
+$router->post('/materi/restore', 'MateriController@restore');
+
+
+
 
 
