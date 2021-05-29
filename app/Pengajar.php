@@ -18,7 +18,10 @@ class Pengajar extends Model implements AuthenticatableContract, AuthorizableCon
      * @var array
      */
     protected $fillable = [
-        'url_gambar', 'nama', 'deskripsi', 'is_deleted'
+        'url_gambar', 
+        'nama', 
+        'deskripsi', 
+        'is_deleted'
     ];
 
     /**
@@ -28,6 +31,10 @@ class Pengajar extends Model implements AuthenticatableContract, AuthorizableCon
      */
     protected $hidden = [
         
+    ];
+
+    protected $dates = [
+        'deleted_at'
     ];
 
     protected $table = 'pengajar';
