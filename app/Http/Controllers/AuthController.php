@@ -6,6 +6,8 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
+use Haruncpi\LaravelIdGenerator\IdGenerator;
+
 class AuthController extends Controller
 {
     public function register(Request $request) 
@@ -26,11 +28,19 @@ class AuthController extends Controller
 
         $hash_password = Hash::make($password);
 
+        $id_user = IdGenerator::generate([
+            'table' => 'users', 
+            'field'=>'id_user',
+            'length' => 10, 
+            'prefix' => 'USR-'
+        ]);
+
         $data = [
+            'id_user' => $id_user,
             'email' => $email,
             'password' => $hash_password,
             'nama' => $nama,
-            'asal_universitas' =>$asal_universitas,
+            'asal_universitas' => $asal_universitas,
             'pekerjaan' => $pekerjaan
         ];
 
