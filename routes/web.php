@@ -23,6 +23,9 @@ $router->get('/pengajar', 'PengajarController@index');
 $router->get('/materi', 'MateriController@index');
 $router->get('/materi/id/{id}', 'MateriController@indexById');
 
+$router->get('/produk', 'ProdukController@index');
+$router->get('/produk/id/{id}', 'ProdukController@indexById');
+
 // =================================================================
 //      Need Admin's Authentication
 // ====================================================================
@@ -36,12 +39,26 @@ $router->post('/pengajar/insert', 'PengajarController@store');
 $router->post('/pengajar/update', 'PengajarController@update');
 $router->post('/pengajar/delete', 'PengajarController@delete');
 
+$router->post('/produk/insert', 'ProdukController@store');
+$router->post('/produk/update', 'ProdukController@update');
+$router->post('/produk/delete', 'ProdukController@delete');
+$router->get('/produk/get-delete', 'ProdukController@getDelete');
+$router->post('/produk/restore', 'ProdukController@restore');
+
+$router->post('/booking/insert', 'BookingController@store');
+$router->get('/booking', 'BookingController@index');
+$router->get('/booking/id/{id}', 'BookingController@indexById');
+$router->post('/booking/update', 'BookingController@update');
+$router->post('/booking/delete', 'BookingController@delete');
+$router->get('/booking/get-delete', 'BookingController@getDelete');
+$router->post('/booking/restore', 'BookingController@restore');
+$router->post('/booking/update-status', 'BookingController@updateStatus');
+
 $router->post('/materi/insert', 'MateriController@store');
 $router->post('/materi/update', 'MateriController@update');
 $router->post('/materi/delete', 'MateriController@delete');
 $router->get('/materi/get-delete', 'MateriController@getDelete');
 $router->post('/materi/restore', 'MateriController@restore');
-
 
 
 
