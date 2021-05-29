@@ -26,6 +26,14 @@ $router->get('/materi/id/{id}', 'MateriController@indexById');
 $router->get('/produk', 'ProdukController@index');
 $router->get('/produk/id/{id}', 'ProdukController@indexById');
 
+$router->get('/bab', 'BabController@index');
+$router->get('/bab/id/{id}', 'BabController@indexById');
+$router->get('/bab/materi/{id}', 'BabController@indexByMateri');
+
+$router->get('/soal', 'SoalController@index');
+$router->get('/soal/id/{id}', 'SoalController@indexById');
+$router->get('/soal/bab/{id}', 'SoalController@indexByBab');
+$router->get('/soal/materi/{id}', 'SoalController@indexByMateri');
 // =================================================================
 //      Need Admin's Authentication
 // ====================================================================
@@ -60,6 +68,17 @@ $router->post('/materi/delete', 'MateriController@delete');
 $router->get('/materi/get-delete', 'MateriController@getDelete');
 $router->post('/materi/restore', 'MateriController@restore');
 
+$router->post('/bab/insert', 'BabController@store');
+$router->post('/bab/update', 'BabController@update');
+$router->post('/bab/delete', 'BabController@delete');
+$router->get('/bab/get-delete', 'BabController@getDelete');
+$router->post('/bab/restore', 'BabController@restore');
+
+$router->post('/soal/insert', 'SoalController@store');
+$router->post('/soal/update', 'SoalController@update');
+$router->post('/soal/delete', 'SoalController@delete');
+$router->get('/soal/get-delete', 'SoalController@getDelete');
+$router->post('/soal/restore', 'SoalController@restore');
 
 
 
